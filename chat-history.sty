@@ -1,0 +1,59 @@
+% chat-history.sty
+\ProvidesPackage{chat-history}
+
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage{geometry}
+\RequirePackage{calc} % Required for width calculations
+\usetikzlibrary{fit}
+
+
+% Define geometry for the page
+\geometry{a4paper,margin=1in}
+
+% Define avatar and chat commands
+\newcommand{\newchatperson}[4][]{%
+    \expandafter\newcommand\csname #2\endcsname[1]{%
+        \begin{tikzpicture}[baseline=(current bounding box.north)]
+            % Avatar circle with inscribed image
+            \begin{scope}
+                \clip (0,0) circle(0.5cm); % Clip the avatar image to a circle
+                \node[anchor=center,inner sep=0pt,minimum size=1cm] (avatar) at (0,0)
+                {\includegraphics[width=1cm,height=1cm,keepaspectratio]{#3}};
+            \end{scope}
+
+            % Name positioned above the bubble and right of avatar
+            \node[anchor=north west,text=gray] at (1.2,0.5) {\textbf{#4}};
+            
+            % Chat bubble dynamically sized based on text length
+            % \begin{scope}
+                \node[anchor=north west,draw,rounded corners=0.2cm,fill={#1!20},
+                text=black,align=left,inner sep=0.3em] (bubble) at (1.2,-0.2) {##1};
+                % Add a bounding box for bubble size
+                \node[fit=(bubble),draw=none,inner sep=0.5em] {};
+            % \end{scope}
+        \end{tikzpicture}%%
+        \par\vspace{1em} % Ensure line break after each bubble
+    }
+}
+
+
+
+% Define context command
+\newcommand{\context}[1]{%
+    \begin{center}%
+        \textcolor{gray}{\small --- #1 ---}%
+    \end{center}%
+}
+
+% Define subsection style
+\renewcommand{\subsection}[1]{%
+    \par\vspace{1em}%
+    \noindent\textbf{#1}\par\noindent\rule{\textwidth}{0.5pt}\vspace{0.5em}%
+}
+
+% No paragraph indentation
+\setlength{\parindent}{0pt}
+
+\endinput
