@@ -1,31 +1,42 @@
 \documentclass{article}
 \usepackage{chat-history}
 \usepackage{ctex}
-% \usepackage{titlesec}
-% \titleformat{\section}{\vspace{-1.75ex}\bf}{}{0em}{}[\hrule height 0.8pt\vspace{-1.25ex}]
+\usepackage{titlesec}
+\titleformat{\subsection}{\vspace{-1.75ex}\bf}{}{0em}{}[\hrule height 0.5pt\vspace{0ex}]
+
 
 % Define chat persons
-\definecolor{jgcolor}{HTML}{7F7F7F}
-\newchatperson[jgcolor]{jg}{avatar.jpg}{椒果}
+\newchatperson[gray]{jg}{avatar.jpg}{花椒果汁}
+\newchathost[RoyalBlue]{cx}{avatar.jpg}{咸狼赤弦}
+\newchathost[blue]{cxx}{avatar.jpg}{咸狼赤弦longer}
 
 
 \begin{document}
 
-Clone \input{ |git remote get-url origin} to get the source code of this page.
-\section{Chat History Example}
+\begin{quote}
+    Clone \input{ |git remote get-url origin} to get the \LaTeX \ code of this page.
+\end{quote}
 
-\subsection{12/31/2024}
-\context{这是一段背景}
+\section{2024年合订本}
 
-\jg{一段发言}
-\jg{另一段发言}
-% test long text
-\jg{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
-\jg{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore}
+\subsection{05/16/2024}
+\jg{话说人摸电线会触电，那么电线被人摸就会触手？}
 
-\subsection{01/01/2025}
-\context{新的一天开始了}
+\subsection{05/17/2024}
+\jg{为什么虹桥机场不能去阿斯加德？}
 
-\jg{这是新的对话内容}
+\subsection{05/16/2024}
+\context{在讨论JWST不能观测全部的可见光波长}
+\cx{主要是观测红外 \ 从600纳米到25微米}
+\cxx{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
+\jg{@咸狼赤弦 \ 不可见光的东西，要好好查查他们的账本}
+
+\subsection{05/16/2024}
+\context{在讨论美国光学望远镜建造部门的反间谍措施}
+\jg{蠢人容易被情报人员利用，是因为intelligence被偷走了吗}
+
+
+
+
 
 \end{document}
