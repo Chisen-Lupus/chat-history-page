@@ -20,24 +20,25 @@
         \begin{tikzpicture}[baseline=(current bounding box.north)]
             % Avatar circle with inscribed image
             \begin{scope}
-                \clip (0,0) circle(0.5cm); % Clip the avatar image to a circle
+                \clip (0,0) circle(0.6cm); % Clip the avatar image to a circle
                 \node[anchor=center,inner sep=0pt,minimum size=1cm] (avatar) at (0,0)
-                {\includegraphics[width=1cm,height=1cm,keepaspectratio]{#3}};
+                {\includegraphics[width=1.2cm,height=1.2cm,keepaspectratio]{#3}};
             \end{scope}
 
             % Name positioned above the bubble and right of avatar
-            \node[anchor=north west,text=gray] at (1.2,0.5) {\textbf{#4}};
+            \node[anchor=north west,text=gray] at (0.9,0.5) {\textbf{#4}};
             
             % Decide dynamically whether to use text width or not
             \ifdim\textlen>\dimexpr\textwidth-4cm\relax
                 % Long text: use text width
-                \node[anchor=north west,draw,rounded corners=0.2cm,fill={#1!20},
-                text=black,align=left,inner sep=0.3em,
-                text width={\dimexpr\textwidth-4cm\relax}] at (1.2,-0.2) {##1};
+                % NOTE: 'draw' gives a border
+                \node[anchor=north west,rounded corners=0.2cm,fill={#1!20},
+                text=black,align=left,inner sep=0.7em,
+                text width={\dimexpr\textwidth-4cm\relax}] at (0.9,-0.2) {##1};
             \else
                 % Short text: fit naturally
-                \node[anchor=north west,draw,rounded corners=0.2cm,fill={#1!20},
-                text=black,align=left,inner sep=0.3em] at (1.2,-0.2) {##1};
+                \node[anchor=north west,rounded corners=0.2cm,fill={#1!20},
+                text=black,align=left,inner sep=0.7em] at (0.9,-0.2) {##1};
             \fi
         \end{tikzpicture}%%
         \par\vspace{1em} % Ensure line break after each bubble
@@ -54,7 +55,8 @@
 % Define subsection style
 \renewcommand{\subsection}[1]{%
     \par\vspace{1em}%
-    \noindent\textbf{#1}\par\noindent\rule{\textwidth}{0.5pt}\vspace{0.5em}%
+    \noindent\textbf{#1}\\[-0.5em] % Line break with negative vertical space to adjust spacing
+    \noindent\rule{\textwidth}{0.5pt}\vspace{0.5em}%
 }
 
 % No paragraph indentation
