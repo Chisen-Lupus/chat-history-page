@@ -1,14 +1,24 @@
-\documentclass{article}
+\documentclass[]{article}
 \usepackage{chat-history}
-\usepackage{ctex}
+\usepackage[fontset=fandol]{ctex}
+% \setCJKmainfont{Noto Serif SC}
+\setCJKmainfont{Noto Sans SC}
+\setmainfont{Noto Sans SC}
+% \setCJKsansfont{Noto Sans SC}
+% \setCJKmonofont{Noto Sans Mono SC}
 \usepackage{titlesec}
 \titleformat{\subsection}{\vspace{-1.75ex}\bf}{}{0em}{}[\hrule height 0.5pt\vspace{0ex}]
-
+\usepackage{fontspec} % Enables font customization
+\newfontfamily\emojifont{Noto Color Emoji}[Renderer=HarfBuzz, 
+UprightFont={*},
+BoldFont={*}] % Can also use Noto Color Emoji
 
 % Define chat persons
 \newchatperson[gray]{jg}{avatar.jpg}{花椒果汁}
+
+% Define chat hosts
 \newchathost[RoyalBlue]{cx}{avatar.jpg}{咸狼赤弦}
-\newchathost[blue]{cxx}{avatar.jpg}{咸狼赤弦longer}
+\newchathost[gray]{wm}{avatar.jpg}{{\emojifont🐾}神前 \ 海/彦烈{\emojifont🐾}}
 
 
 \begin{document}
@@ -25,15 +35,38 @@
 \subsection{05/17/2024}
 \jg{为什么虹桥机场不能去阿斯加德？}
 
-\subsection{05/16/2024}
+\subsection{06/03/2024}
 \context{在讨论JWST不能观测全部的可见光波长}
 \cx{主要是观测红外 \ 从600纳米到25微米}
-\cxx{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}
 \jg{@咸狼赤弦 \ 不可见光的东西，要好好查查他们的账本}
 
-\subsection{05/16/2024}
+\subsection{06/07/2024}
 \context{在讨论美国光学望远镜建造部门的反间谍措施}
 \jg{蠢人容易被情报人员利用，是因为intelligence被偷走了吗}
+
+\subsection{06/15/2024}
+\jg{如果湘菜里有芹菜，那秦菜里有香菜吗？}
+
+\subsection{06/20/2024}
+\context{在讨论飞机上生的小孩该起什么名字}
+\jg{“你是天生的” “天生什么的？” “就是天生的”}
+
+\subsection{06/27/2024}
+\context{赤弦乱入了几个教授的聊天后找不到借口开溜}
+\cx{不过真要这么说的话我觉得他们应该是在劝退}
+\cx{一直在讲学术圈的黑暗}
+\jg{（毕竟有阳光照到的地方研究不了天文}
+
+\subsection{06/30/2024}
+\jg{大部分人都用右手写字是不是因为这才是right hand？}
+
+\subsection{07/27/2024}
+\context{在讨论购买键盘时的考虑事项}
+\wm{糖进键盘， WD40和酒精都救不了}
+\jg{@{\emojifont🐾}神前 \ 海/彦烈{\emojifont🐾} \ 所以不要使用糖特别多的语言}
+
+
+
 
 
 

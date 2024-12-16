@@ -27,7 +27,8 @@
             \end{scope}
 
             % Name positioned above the bubble and right of avatar
-            \node[anchor=north west,text=gray] at (0.9,0.5) {\textbf{#4}};
+            % \node[anchor=north west,text=gray] at (0.9,0.5) {\textbf{#4}};
+            \node[anchor=north west,text=gray] at (0.9,0.5) {#4};
             
             % Decide dynamically whether to use text width or not
             \ifdim\textlen>\dimexpr\textwidth-4cm\relax
@@ -63,7 +64,7 @@
             \end{scope}
 
             % Name positioned above the bubble and left of avatar
-            \node[anchor=north east,text=gray] at (-0.9,0.5) {\textbf{#4}};
+            \node[anchor=north east,text=gray] at (-0.9,0.5) {{#4}};
             
             % Decide dynamically whether to use text width or not
             \ifdim\textlen>\dimexpr\textwidth-4cm\relax
@@ -88,7 +89,7 @@
 \newcommand{\context}[1]{%
     \vspace{1ex}
     \begin{center}%
-        \textcolor{gray}{\small --- #1 ---}%
+        \textcolor{gray}{\small ------ #1 ------}%
     \end{center}%
     \vspace{-5ex}
 }
