@@ -1,4 +1,3 @@
-% chat-history.sty
 \ProvidesPackage{chat-history}
 
 \RequirePackage{xcolor}
@@ -7,7 +6,7 @@
 \RequirePackage{geometry}
 \RequirePackage{calc} % Required for width calculations
 \usetikzlibrary{fit}
-
+\newlength{\textlen}
 
 % Define geometry for the page
 \geometry{a4paper,margin=1in}
@@ -15,6 +14,9 @@
 % Define avatar and chat commands
 \newcommand{\newchatperson}[4][]{%
     \expandafter\newcommand\csname #2\endcsname[1]{%
+        % Measure the text width
+        \settowidth{\textlen}{##1}
+        
         \begin{tikzpicture}[baseline=(current bounding box.north)]
             % Avatar circle with inscribed image
             \begin{scope}
@@ -26,19 +28,21 @@
             % Name positioned above the bubble and right of avatar
             \node[anchor=north west,text=gray] at (1.2,0.5) {\textbf{#4}};
             
-            % Chat bubble dynamically sized based on text length
-            % \begin{scope}
+            % Decide dynamically whether to use text width or not
+            \ifdim\textlen>\dimexpr\textwidth-4cm\relax
+                % Long text: use text width
                 \node[anchor=north west,draw,rounded corners=0.2cm,fill={#1!20},
-                text=black,align=left,inner sep=0.3em] (bubble) at (1.2,-0.2) {##1};
-                % Add a bounding box for bubble size
-                \node[fit=(bubble),draw=none,inner sep=0.5em] {};
-            % \end{scope}
+                text=black,align=left,inner sep=0.3em,
+                text width={\dimexpr\textwidth-4cm\relax}] at (1.2,-0.2) {##1};
+            \else
+                % Short text: fit naturally
+                \node[anchor=north west,draw,rounded corners=0.2cm,fill={#1!20},
+                text=black,align=left,inner sep=0.3em] at (1.2,-0.2) {##1};
+            \fi
         \end{tikzpicture}%%
         \par\vspace{1em} % Ensure line break after each bubble
     }
 }
-
-
 
 % Define context command
 \newcommand{\context}[1]{%
