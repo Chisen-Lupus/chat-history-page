@@ -3,13 +3,9 @@
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
-\RequirePackage{geometry}
 \RequirePackage{calc} % Required for width calculations
 \usetikzlibrary{fit}
 \newlength{\textlen}
-
-% Define geometry for the page
-\geometry{a4paper,margin=1in}
 
 % Define avatar and chat commands
 \newcommand{\newchatperson}[4][]{%
@@ -83,15 +79,13 @@
     }
 }
 
-
-
 % Define context command
 \newcommand{\context}[1]{%
     \vspace{1ex}
     \begin{center}%
         \textcolor{gray}{\small ------ #1 ------}%
     \end{center}%
-    \vspace{-5ex}
+    \vspace{-4ex}
 }
 
 % % Define subsection style
