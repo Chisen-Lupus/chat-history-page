@@ -3,22 +3,35 @@
 \usepackage[fontset=fandol]{ctex}
 % \setCJKmainfont{Noto Serif SC}
 \setCJKmainfont{Noto Sans SC}
-\setmainfont{Noto Sans SC}
 % \setCJKsansfont{Noto Sans SC}
 % \setCJKmonofont{Noto Sans Mono SC}
+\usepackage{fontspec} % Enables font customization
+\newfontfamily\emojifont{Noto Color Emoji}[Renderer=HarfBuzz]
+\setmainfont{Noto Sans SC}
 \usepackage{titlesec}
 \titleformat{\subsection}{\vspace{-1.75ex}\bf}{}{0em}{}[\hrule height 0.5pt\vspace{0ex}]
-\usepackage{fontspec} % Enables font customization
-\newfontfamily\emojifont{Noto Color Emoji}[Renderer=HarfBuzz, 
-UprightFont={*},
-BoldFont={*}] % Can also use Noto Color Emoji
 
-% Define chat persons
+% Define chat people
 \newchatperson[gray]{jg}{avatar.jpg}{花椒果汁}
+\newchatperson[gray]{sm}{avatar.jpg}{Simone-IARP中国联络员}
+\newchatperson[gray]{dn}{avatar.jpg}{Dan}
+\newchatperson[gray]{nw}{avatar.jpg}{星光立交与星河路互通匝道}
+\newchatperson[gray]{li}{avatar.jpg}{雷狼狼}
+\newchatperson[gray]{sh}{avatar.jpg}{舒扒皮}
+\newchatperson[gray]{aml}{avatar.jpg}{阿猫的猫}
+\newchatperson[gray]{bdl}{avatar.jpg}{白貂Akirua}
 
 % Define chat hosts
 \newchathost[RoyalBlue]{cx}{avatar.jpg}{咸狼赤弦}
 \newchathost[gray]{wm}{avatar.jpg}{{\emojifont🐾}神前 \ 海/彦烈{\emojifont🐾}}
+\newchathost[gray]{bdr}{avatar.jpg}{白貂Akirua}
+\newchathost[gray]{nl}{avatar.jpg}{纳尔}
+\newchathost[gray]{gf}{avatar.jpg}{光锋-ZH9c418}
+\newchathost[gray]{lr}{avatar.jpg}{雷尔想吃电弧星}
+\newchathost[gray]{hq}{avatar.jpg}{草莓绿茶曲奇}
+\newchathost[gray]{amr}{avatar.jpg}{阿猫的猫}
+\newchathost[gray]{xz}{avatar.jpg}{【吃瓜】棕汪}
+
 
 
 \begin{document}
@@ -52,7 +65,7 @@ BoldFont={*}] % Can also use Noto Color Emoji
 \jg{“你是天生的” “天生什么的？” “就是天生的”}
 
 \subsection{06/27/2024}
-\context{赤弦乱入了几个教授的聊天后找不到借口开溜}
+\context{赤弦乱入了几个天文系教授的聊天后发现话题太高深但找不到借口开溜}
 \cx{不过真要这么说的话我觉得他们应该是在劝退}
 \cx{一直在讲学术圈的黑暗}
 \jg{（毕竟有阳光照到的地方研究不了天文}
@@ -60,10 +73,134 @@ BoldFont={*}] % Can also use Noto Color Emoji
 \subsection{06/30/2024}
 \jg{大部分人都用右手写字是不是因为这才是right hand？}
 
-\subsection{07/27/2024}
+\subsection{07/04/2024}
 \context{在讨论购买键盘时的考虑事项}
 \wm{糖进键盘， WD40和酒精都救不了}
 \jg{@{\emojifont🐾}神前 \ 海/彦烈{\emojifont🐾} \ 所以不要使用糖特别多的语言}
+
+\subsection{07/08/2024}
+\context{赤弦发了一张小英雄其实很强的梗图}
+\jg{@咸狼赤弦 \ 小英雄不是触手可得的}
+
+\subsection{07/09/2024}
+\bdr{为什么黄石公园不卖硫磺皂周边}
+\jg{黄石坐高铁去武汉，然后坐地铁去柏林，这是美国到欧洲最快的路线}
+
+\subsection{07/11/2024}
+\context{在讨论山东宾果游戏中的刻板印象}
+\nl{我172}
+\cx{可窝认识的山东人均大汉}
+\jg{@咸狼赤弦 \ 陕西人均大唐？}
+
+\subsection{07/19/2024}
+\context{在隔壁群讨论ArXiv中Cosmology分类}
+\cx{好奇怪}
+\cx{用google app打开arxiv 朗读 结果读出来的是8天前的页面的内容}
+\jg{研究cosmology的人叫coser吗？}
+
+\subsection{07/21/2024}
+\context{在讨论未来规划}
+\cx{窝开卷是为了以后也能像现在这样到处玩}
+\sm{对cxjj来说就没有闭卷考试，全都是开卷}
+
+\subsection{07/21/2024}
+\context{在讨论推特上偶遇的天文学小动物的研究方向}
+\cx{他觉得mit是个好地方}
+\cx{那他肯定是做系外行星的 猜中了.jpg}
+\jg{@咸狼赤弦 \ 好厉害，随手搓个行星}
+
+\subsection{07/22/2024}
+\jg{愚公移山是个人行为，所以是于私移山}
+
+\subsection{07/23/2024}
+\jg{话说……冒脑花是不是一种烫头}
+\jg{只不过烫的是里面}
+
+\subsection{07/23/2024}
+\context{赤弦发了一张内容是``看完奥本海默突然想学理论物理可行吗''的截图}
+\gf{@咸狼赤弦 \ 看完黑客帝国我想学功夫躲子弹可以吗}
+\jg{@光锋-ZH9c418 \ 不不不，那是kongfu不是功夫，意思是你学完只能饿肚子喝西北风}
+
+\subsection{07/28/2024}
+\jg{地铁和公交车相比最大的缺点是，它不巴适}
+
+\subsection{07/30/2024}
+\context{椒果在知乎``空间和时间是有质量的吗?''问题下的回答}
+\jg{时间当然是有质量的，物理学家会把质量小的年份叫做light year。}
+
+\subsection{08/01/2024}
+\dn{如果基督教里666代表邪恶 是不是意味着25.8是邪恶的根}
+
+\subsection{08/05/2024}
+\context{看到一个好看的画师}
+\cx{想约}
+\jg{@咸狼赤弦 \ 为什么要约荤的呢，因为素的不可约}
+
+\subsection{08/05/2024}
+\context{在讨论雷尔做毛替的动作和本体出毛不太像}
+\cx{被tf的不够深度}
+\lr{来点深度tf}
+\jg{@雷尔想吃电弧星 \ 深度tf就是cuda？}
+\jg{不对tf本来就是用来深度的啊}
+\jg{transfur的话，也是一种homomorphism}
+\jg{额异性不算}
+\jg{至少确实morph了}
+
+\subsection{08/10/2024}
+\context{椒果发了一张内容为``我不管，取我虎符号令百万雄师''的梗图}
+\jg{为啥虎符可以号令雄狮？}
+
+\subsection{08/11/2024}
+\jg{为什么找零都是大于零元才找？}
+
+\subsection{08/17/2024}
+\context{赤弦在发午饭}
+\cx{大块肋眼牛排！}
+\jg{@咸狼赤弦 \ 只有刑天才有真正的肋眼}
+
+\subsection{08/18/2024}
+\jg{凭啥四川火锅不算有机食品}
+\jg{涮的都是各种内脏}
+\jg{各种内脏下水难道不organic吗？}
+\nw{草}
+\nw{你这有机火锅还是无肌啊}
+
+\subsection{08/19/2024}
+\jg{过敏性肤质会麸质过敏吗？}
+
+\subsection{08/19/2024}
+\li{“我今年实岁26，虚岁28”王警官说着在蛋糕上点了（26+28i）根蜡烛}
+\hq{@雷狼狼 其实这个还是比较容易}
+\hq{因为蛋糕和C是同构的}
+\hq{只要位置找对}
+\jg{这叫同胚，同的是蛋糕胚}
+
+\subsection{08/20/2024}
+\context{赤弦发了一张猞猁标本的照片}
+\jg{@咸狼赤弦 \ 很多仙侠小说人名喜欢叫啥啥子}
+\jg{那猞猁成精了就是猞猁子}
+
+\subsection{08/20/2024}
+\context{在讨论各地小学的师资}
+\xz{@阿猫的猫 \ 不是的，至少那个小孩的老师还没我这个县城出身的小学老师讲的明白}
+\cx{班主任天天讲什么 剖腹产出来的学生就是不行}
+\aml{是不是减负导致的}
+\sh{@阿猫的猫 \ 是剪腹导致的}
+
+\subsection{08/26/2024}
+\jg{给没心没肺的人做心肺复苏有用吗？}
+
+\subsection{08/26/2024}
+\context{赤弦在从晒了一天的车里往外搬柜子}
+\cx{这几个柜子被拷到烫手的根本拿不起来}
+\amr{@咸狼赤弦 \ 用锟斤拷拿出来}
+
+
+\subsection{08/27/2024}
+\jg{二郎神是不是因为封号太多要念很久，所以叫贯口大神？}
+
+
+
 
 
 
