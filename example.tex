@@ -1,5 +1,6 @@
-\documentclass[a4paper, twoside]{article}
-\usepackage[inner=1in, outer=0.5in, top=0.5in, bottom=0.5in]{geometry}
+\documentclass[a4paper, 9pt, twoside]{article}
+\usepackage[inner=0.2in, outer=0.2in, top=0.2in, bottom=0.5in]{geometry}
+\geometry{papersize={99mm, 210mm}}        % 定义 DL 尺寸
 \usepackage[fontset=fandol]{ctex}
 % \setCJKmainfont{Noto Serif SC}
 \setCJKmainfont{Noto Sans SC}
@@ -39,7 +40,7 @@
 \begin{document}
 
 \begin{quote}
-    Clone \input{ |git remote get-url origin} to get the \LaTeX \ code of this page.
+    通过 \input{ |git remote get-url origin} 获取本页面的 \LaTeX 代码. 
 \end{quote}
 
 % \newpage
