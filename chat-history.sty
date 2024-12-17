@@ -5,6 +5,7 @@
 \RequirePackage{tikz}
 \RequirePackage{calc} % Required for width calculations
 \usetikzlibrary{fit}
+\usetikzlibrary{calc}
 \newlength{\textlen}
 
 % Define avatar and chat commands
@@ -99,6 +100,15 @@
 %     \noindent\textbf{#1}\\[-0.5em] % Line break with negative vertical space to adjust spacing
 %     \noindent\rule{\textwidth}{0.5pt}\vspace{0.5em}%
 % }
+
+\newcommand{\avatarWithText}[4]{%
+    \begin{scope}
+        \clip (#1, #2) circle(0.3cm);
+        \node[anchor=center,inner sep=0pt,minimum size=1cm] at (#1, #2)
+        {\includegraphics[width=0.6cm,height=0.6cm,keepaspectratio]{#3}};
+    \end{scope}
+    \node[anchor=west,text=gray] at ($(#1 + 0.5cm, #2)$) {#4};
+}
 
 % No paragraph indentation
 \setlength{\parindent}{0pt}

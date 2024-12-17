@@ -1,5 +1,5 @@
 \documentclass[a4paper, 9pt, twoside]{article}
-\usepackage[inner=0.2in, outer=0.2in, top=0.2in, bottom=0.5in]{geometry}
+\usepackage[inner=0.2in, outer=0.2in, top=0.2in, bottom=0.6in]{geometry}
 \geometry{papersize={99mm, 210mm}}        % 定义 DL 尺寸
 \usepackage[fontset=fandol]{ctex}
 % \setCJKmainfont{Noto Serif SC}
@@ -39,13 +39,42 @@
 
 \begin{document}
 
-\begin{quote}
-    通过 \input{ |git remote get-url origin} 获取本页面的 \LaTeX 代码. 
-\end{quote}
+\pagenumbering{gobble} % 禁用页码
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \clip (0,0) circle(1.5cm); % Clip the avatar image to a circle
+        \node[anchor=center,inner sep=0pt,minimum size=1cm] (avatar) at (0,0)
+        {\includegraphics[width=3cm,height=3cm,keepaspectratio]{avatar/default.jpg}};
+    \end{tikzpicture}\\[0.5cm]
+    {\Huge\bfseries ``弦狼实验室''}\\
+    {\Huge\bfseries 2024年冷笑话合订本}\\[1cm] 
+    {\Large 主要贡献者}\\
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \avatarWithText{0}{0}{avatar/default.jpg}{花椒果汁}
+        \avatarWithText{0}{-0.8cm}{avatar/default.jpg}{Simone-IARP中国联络员}
+        \avatarWithText{0}{-1.6cm}{avatar/default.jpg}{Dan}
+        \avatarWithText{0}{-2.4cm}{avatar/default.jpg}{星光立交与星河路互通匝道}
+        \avatarWithText{0}{-3.2cm}{avatar/default.jpg}{雷狼狼}
+        \avatarWithText{0}{-4.0cm}{avatar/default.jpg}{舒扒皮}
+        \avatarWithText{0}{-4.8cm}{avatar/default.jpg}{阿猫的猫}
+        \avatarWithText{0}{-5.6cm}{avatar/default.jpg}{白貂Akirua}
+        \avatarWithText{0}{-6.4cm}{avatar/default.jpg}{雪风：欢迎来到现实的荒漠}
+    \end{tikzpicture}
+    
+    % \vfill
 
-% \newpage
+    % \begin{quote}
+    %     访问 \input{ |git remote get-url origin} 获取本文的 \LaTeX 代码. 
+    % \end{quote}
+    % \today
 
-\section{2024年合订本}
+\end{titlepage}
+
+% \section{2024年合订本}
+\pagenumbering{arabic} % 页码重置为阿拉伯数字
+\setcounter{page}{1}   % 从第1页开始编号
 
 \subsection{05/16/2024}
 \jg{话说人摸电线会触电，那么电线被人摸就会触手？}
