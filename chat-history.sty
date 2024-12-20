@@ -26,18 +26,18 @@
             \end{scope}
 
             % Name positioned above the bubble and right of avatar
-            \node[anchor=north west,text=gray] at (0.7cm,0.5cm) {#3};
+            \node[anchor=south west,text=gray] at (0.7cm,0cm) {{\small#3}};
             
             % Decide dynamically whether to use text width or not
             \ifdim\textlen>\dimexpr\textwidth-2.9cm\relax
                 % Long text: use text width
                 \node[anchor=north west,rounded corners=0.2cm,fill={#4!20},
                 text=black,align=left,inner sep=0.7em,
-                text width={\dimexpr\textwidth-2.9cm\relax}] at (0.7cm,-0.2cm) {##1};
+                text width={\dimexpr\textwidth-2.9cm\relax}] at (0.7cm,-0.1cm) {##1};
             \else
                 % Short text: fit naturally
                 \node[anchor=north west,rounded corners=0.2cm,fill={#4!20},
-                text=black,align=left,inner sep=0.7em] at (0.7cm,-0.2cm) {##1};
+                text=black,align=left,inner sep=0.7em] at (0.7cm,-0.1cm) {##1};
             \fi
         \end{tikzpicture}%%
         }
@@ -61,18 +61,18 @@
             \end{scope}
 
             % Name positioned above the bubble and left of avatar
-            \node[anchor=north east,text=gray] at (-0.7cm,0.5cm) {{#3}};
+            \node[anchor=south east,text=gray] at (-0.7cm,0cm) {{\small#3}};
             
             % Decide dynamically whether to use text width or not
             \ifdim\textlen>\dimexpr\textwidth-2.9cm\relax
                 % Long text: use text width
                 \node[anchor=north east,rounded corners=0.2cm,fill={#4!20},
                 text=black,align=left,inner sep=0.7em,
-                text width={\dimexpr\textwidth-2.9cm\relax}] at (-0.7cm,-0.2cm) {##1};
+                text width={\dimexpr\textwidth-2.9cm\relax}] at (-0.7cm,-0.1cm) {##1};
             \else
                 % Short text: fit naturally
                 \node[anchor=north east,rounded corners=0.2cm,fill={#4!20},
-                text=black,align=left,inner sep=0.7em] at (-0.7cm,-0.2cm) {##1};
+                text=black,align=left,inner sep=0.7em] at (-0.7cm,-0.1cm) {##1};
             \fi
         \end{tikzpicture}%
         }
