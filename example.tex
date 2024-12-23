@@ -39,6 +39,7 @@
 \newchatperson{wxl}{avatar/wx.jpg}{万相}{Gray}
 \newchatperson{lrl}{avatar/lr.jpg}{雷尔想吃电弧星}{ProcessBlue}
 \newchatperson{yyl}{avatar/yy.jpg}{热烈祝贺发表核心期刊零篇}{Peach}
+\newchatperson{jml}{avatar/jm.jpg}{短羊绒抱枕节牧牧}{Apricot}
 
 % 捧哏的人(出现在右侧)
 \newchathost{cxr}{avatar/cx.jpg}{晴天赤弦}{Orange}
@@ -57,7 +58,7 @@
 \newchathost{dnr}{avatar/dn.jpg}{Dan}{Gray}
 \newchathost{xfr}{avatar/xf.jpg}{雪风：欢迎来到现实的荒漠}{Red}
 \newchathost{nwr}{avatar/nw.jpg}{星光立交与星河路互通匝道}{RoyalBlue}
-
+\newchathost{ehr}{avatar/eh.jpg}{Husky Wang}{CadetBlue}
 
 
 \begin{document}
@@ -65,6 +66,7 @@
 % 封面
 
 \pagenumbering{gobble} % 禁用页码
+
 \begin{titlepage}
     \centering
     \vspace*{2cm}
@@ -81,10 +83,17 @@
     截至\today
 \end{titlepage}
 
-% 前言
-
 \pagenumbering{roman} % 页码重置为阿拉伯数字
 \setcounter{page}{1}   % 从第1页开始编号
+
+% May skip TOC to adjust for 4N page count
+
+\section{目录}
+\tableofcontents % 添加目录
+
+\newpage
+
+% 前言
 
 \section{主要贡献者}
 {\vspace{-2ex} \centering \small(按第一次出现时间排序) \par}
@@ -106,16 +115,10 @@
     \avatarWithText{0}{-9.6cm}{avatar/wx.jpg}{万相}
     \avatarWithText{0}{-10.4cm}{avatar/lr.jpg}{雷尔想吃电弧星}
     \avatarWithText{0}{-11.2cm}{avatar/yy.jpg}{热烈祝贺发表核心期刊零篇}
+    \avatarWithText{0}{-12.0cm}{avatar/jm.jpg}{短羊绒抱枕节牧牧}
 \end{tikzpicture}
     
 \newpage
-
-% May skip TOC to adjust for 4N page count
-
-% \section{目录}
-% \tableofcontents % 添加目录
-
-% \newpage
 
 % content
 
@@ -489,11 +492,54 @@
 \subsection{12月18日}
 \jgl{嫦娥一直住在广寒宫，不会宫寒吗？}
 
+\subsection{12月19日}
+\jgl{话说国安是不是特别讨厌artificial intelligence？}
+\jgl{而日本的情报学就特别擅长这个}
 
-% last page
+\subsection{12月19日}
+\jgl{悬丝诊脉是不是最早的线上医疗技术？}
+
+\subsection{12月19日}
+\ehr{话说上次有个来上海的土生土长的奥斯陆上海人，他只会说英文 挪威话特上海话，然后他来上海的原因是去交大学中文}
+\jgl{那他中文肯定很好，可以教大学中文}
+
+\subsection{12月19日}
+\context{赤弦在感慨和美国相比上海物价真便宜}
+\cxr{窝在美国大部分时间都在吃速冻的东西}
+\sml{所以你是管理员，每天都吃sudo的东西}
+
+\newpage
+
+\subsection{12月19日}
+\context{赤弦在感慨选择总伴随着放弃}
+\cxr{早知道会是这样}
+\cxr{窝那会要么就开卷要么就开摆了}
+\sml{结果又摆又卷}
+\sml{最终交出了一份摆卷}
+
+\subsection{12月20日}
+\cxr{话说之前跟印度人聊天知道了一个挺有意思的事情}
+\cxr{不要对一个印度人说coconut}
+\cxr{因为这个词的意思是棕皮白心}
+\cxr{印度居然也有香蕉人的同义词}
+\jgl{从范畴的意义上讲，coconut不就是 nut}
+\jgl{就像coauthor等于reader}
+
+\subsection{12月20日}
+\jgl{为什么无线充电还有电量限制？}
+
+\subsection{12月20日}
+\jgl{脱毛和卸装是不是一个意思？}
+\jml{我是民科，这就是冷硝化}
+
+% 封底
 
 \newpage
 \pagenumbering{gobble} % Disable page numbering
+
+% 空页
+\null
+\newpage
 
 \null
 \vfill
@@ -503,10 +549,5 @@
     感谢各位群友贡献的聊天记录. \\
     访问 \input{ |git remote get-url origin} 获取本文的 \LaTeX 代码. 
 \end{quote}
-
-% 可以添加封底
-
-% \newpage
-% \null
 
 \end{document}
