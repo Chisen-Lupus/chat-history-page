@@ -33,11 +33,11 @@
                 % Long text: use text width
                 \node[anchor=north west,rounded corners=0.2cm,fill={#4!20},
                 text=black,align=left,inner sep=0.7em,
-                text width={\dimexpr\textwidth-2.9cm\relax}] at (0.7cm,-0.1cm) {##1};
+                text width={\dimexpr\textwidth-2.9cm\relax}] at (0.7cm,0cm) {##1};
             \else
                 % Short text: fit naturally
                 \node[anchor=north west,rounded corners=0.2cm,fill={#4!20},
-                text=black,align=left,inner sep=0.7em] at (0.7cm,-0.1cm) {##1};
+                text=black,align=left,inner sep=0.7em] at (0.7cm,0cm) {##1};
             \fi
         \end{tikzpicture}%%
         }
@@ -68,11 +68,11 @@
                 % Long text: use text width
                 \node[anchor=north east,rounded corners=0.2cm,fill={#4!20},
                 text=black,align=left,inner sep=0.7em,
-                text width={\dimexpr\textwidth-2.9cm\relax}] at (-0.7cm,-0.1cm) {##1};
+                text width={\dimexpr\textwidth-2.9cm\relax}] at (-0.7cm,0cm) {##1};
             \else
                 % Short text: fit naturally
                 \node[anchor=north east,rounded corners=0.2cm,fill={#4!20},
-                text=black,align=left,inner sep=0.7em] at (-0.7cm,-0.1cm) {##1};
+                text=black,align=left,inner sep=0.7em] at (-0.7cm,0cm) {##1};
             \fi
         \end{tikzpicture}%
         }
