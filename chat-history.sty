@@ -1,9 +1,12 @@
+% chat-history.sty
+
 \ProvidesPackage{chat-history}
 
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{tikz}
 \RequirePackage{calc} % Required for width calculations
+\RequirePackage{needspace}
 \usetikzlibrary{fit}
 \usetikzlibrary{calc}
 \newlength{\textlen}
@@ -91,9 +94,10 @@
     \vspace{-3ex}
 }
 
-% % Define subsection style
+% % Define subsection style, now defined in titlespec
 % \renewcommand{\subsection}[1]{%
-%     \par\vspace{1em}%
+%     \needspace{5\baselineskip} % Ensure at least 5 lines remain on the page
+%     % \par\vspace{1em}%
 %     \noindent\textbf{#1}\\[-0.5em] % Line break with negative vertical space to adjust spacing
 %     \noindent\rule{\textwidth}{0.5pt}\vspace{0.5em}%
 % }

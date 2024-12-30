@@ -13,8 +13,20 @@
 % \setmainfont{Smiley Sans}
 \setmainfont{Noto Sans SC}[Weight=400]
 \usepackage{titlesec}
-\titleformat{\section}{\vspace{-1.75ex}\centering\Large\bf}{}{0em}{}
-\titleformat{\subsection}{\vspace{-1.75ex}\bf}{}{0em}{}[\hrule height 0.5pt\vspace{0ex}]
+\titleformat{\section}
+  {\vspace{-1.75ex}\centering\Large\bf}
+  {}
+  {0em}
+  {}
+\titleformat{\subsection}[block]%
+  {% Format settings for subsection
+    \needspace{2.5\baselineskip}%  <-- Ensures appropiate lines of space remain
+    \vspace{-1.75ex}\bfseries    % Original style
+  }%
+  {}             % No label
+  {0em}          % No indentation
+  {}             % Nothing before subsection title text
+  [\hrule height 0.5pt \vspace{0ex}] % After subsection
 \usepackage{tocloft} % 控制目录样式
 \renewcommand{\contentsname}{} % 清空目录标题
 \setlength{\cftbeforetoctitleskip}{0pt} % 移除标题前的空白
@@ -98,7 +110,7 @@
 % 前言
 
 \section{主要贡献者}
-{\vspace{-2ex} \centering \small(按第一次出现时间排序) \par}
+{\vspace{-2ex} \centering \small(2024年起, 按首次收录时间排序) \par}
 
 \hspace{1em}
 \begin{tikzpicture}[baseline=(current bounding box.north)]
@@ -118,8 +130,8 @@
     \avatarWithText{0}{-10.4cm}{avatar/lr.jpg}{雷尔想吃电弧星}
     \avatarWithText{0}{-11.2cm}{avatar/yy.jpg}{热烈祝贺发表核心期刊零篇}
     \avatarWithText{0}{-12.0cm}{avatar/jm.jpg}{短羊绒抱枕节牧牧}
-    \avatarWithText{0}{-12.8cm}{avatar/nl.jpg}{纳尔}{OrangeRed}
-    \avatarWithText{0}{-13.6cm}{avatar/eh.jpg}{Husky Wang}{CadetBlue}
+    \avatarWithText{0}{-12.8cm}{avatar/nl.jpg}{纳尔}
+    \avatarWithText{0}{-13.6cm}{avatar/eh.jpg}{Husky Wang}
 \end{tikzpicture}
     
 \newpage
@@ -257,7 +269,7 @@
 \subsection{8月19日}
 \jgl{过敏性肤质会麸质过敏吗？}
 
-\newpage
+% \newpage
 
 \subsection{8月19日}
 \lil{“我今年实岁26，虚岁28”王警官说着在蛋糕上点了（26+28i）根蜡烛}
@@ -271,7 +283,7 @@
 \jgl{@晴天赤弦 \ 很多仙侠小说人名喜欢叫啥啥子}
 \jgl{那猞猁成精了就是猞猁子}
 
-\newpage
+% \newpage
 
 \subsection{8月20日}
 \context{在讨论各地小学的师资}
@@ -286,7 +298,7 @@
 \subsection{8月26日}
 \context{赤弦在从晒了一天的车里往外搬柜子}
 \cxr{这几个柜子被拷到烫手的根本拿不起来}
-\amr{@晴天赤弦 \ 用锟斤拷拿出来}
+\aml{@晴天赤弦 \ 用锟斤拷拿出来}
 
 \subsection{8月27日}
 \jgl{二郎神是不是因为封号太多要念很久，所以叫贯口大神？}
@@ -303,7 +315,7 @@
 \subsection{9月6日}
 \jgl{和尚偷懒睡回笼觉，是不是一种叫回龙观的修行？}
 
-\newpage
+% \newpage
 
 \subsection{9月6日}
 \context{在讨论搬到山里后就会变得喜欢发风景照}
@@ -336,7 +348,7 @@
 \subsection{9月27日}
 \jgl{经常把天聊死的人，是不是会觉得上帝已死？}
 
-\newpage
+% \newpage
 
 \subsection{9月27日}
 \jgl{-鱼生会不会有寄生虫啊？\\-子非鱼，为什么要怀疑鱼生？}
@@ -431,7 +443,7 @@
 \subsection{12月15日}
 \sml{狗狗通过撒尿标记地址，是不是也是一种I Pee Address？}
 
-\newpage
+% \newpage
 
 \subsection{12月15日}
 \context{赤弦被火警吵醒后想继续睡接上之前的梦}
@@ -534,7 +546,7 @@
 \jgl{脱毛和卸装是不是一个意思？}
 \jml{我是民科，这就是冷硝化}
 
-\newpage
+% \newpage
 
 \subsection{12月21日}
 \context{赤弦发了一张梗图}
