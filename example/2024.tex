@@ -1,145 +1,3 @@
-\documentclass[a4paper, 9pt, twoside]{article}
-\usepackage[inner=0.2in, outer=0.2in, top=0.2in, bottom=0.6in]{geometry}
-\geometry{papersize={99mm, 210mm}}        % 定义 DL 尺寸
-\usepackage[fontset=fandol]{ctex}
-% \setCJKmainfont{Noto Serif SC}
-\setCJKmainfont{Noto Sans SC}[Weight=400]
-% \setCJKmainfont{Heiti SC}
-% \setCJKmainfont{Smiley Sans}
-% \setCJKsansfont{Noto Sans SC}
-% \setCJKmonofont{Noto Sans Mono SC}
-\usepackage{fontspec} % Enables font customization
-\newfontfamily\emojifont{Noto Color Emoji}[Renderer=HarfBuzz]
-% \setmainfont{Smiley Sans}
-\setmainfont{Noto Sans SC}[Weight=400]
-\usepackage{titlesec}
-\titleformat{\section}
-  {\vspace{-1.75ex}\centering\Large\bf}
-  {}
-  {0em}
-  {}
-\titleformat{\subsection}[block]%
-  {% Format settings for subsection
-    \needspace{2.5\baselineskip}%  <-- Ensures appropiate lines of space remain
-    \vspace{-1.75ex}\bfseries    % Original style
-  }%
-  {}             % No label
-  {0em}          % No indentation
-  {}             % Nothing before subsection title text
-  [\hrule height 0.5pt \vspace{0ex}] % After subsection
-\usepackage{tocloft} % 控制目录样式
-\renewcommand{\contentsname}{} % 清空目录标题
-\setlength{\cftbeforetoctitleskip}{0pt} % 移除标题前的空白
-\setlength{\cftaftertoctitleskip}{0pt}  % 移除标题后的空白
-\setcounter{tocdepth}{1} % 显示到 \section 层级
-
-\usepackage{chat-history}
-
-% 逗哏的人(出现在左侧)
-\newchatperson{jgl}{avatar/jg.jpg}{花椒果汁}{Goldenrod}
-\newchatperson{sml}{avatar/sm.jpg}{Simone}{RedOrange}
-\newchatperson{dnl}{avatar/dn.jpg}{Dan}{Gray}
-\newchatperson{nwl}{avatar/nw.jpg}{星光立交与星河路互通匝道}{RoyalBlue}
-\newchatperson{lil}{avatar/li.jpg}{雷狼狼}{Yellow}
-\newchatperson{shl}{avatar/sh.jpg}{舒扒皮}{Red}
-\newchatperson{aml}{avatar/am.jpg}{阿猫的猫}{NavyBlue}
-\newchatperson{bdl}{avatar/bd.jpg}{白貂Akirua}{Goldenrod}
-\newchatperson{xfl}{avatar/xf.jpg}{雪风：欢迎来到现实的荒漠}{Red}
-\newchatperson{axl}{avatar/ax.jpg}{阿寻}{OrangeRed}
-\newchatperson{xjl}{avatar/xj.jpg}{小郊狼}{Tan}
-\newchatperson{col}{avatar/co.jpg}{CoA}{Cyan}
-\newchatperson{wxl}{avatar/wx.jpg}{万相}{Gray}
-\newchatperson{lrl}{avatar/lr.jpg}{雷尔想吃电弧星}{ProcessBlue}
-\newchatperson{yyl}{avatar/yy.jpg}{热烈祝贺发表核心期刊零篇}{Peach}
-\newchatperson{jml}{avatar/jm.jpg}{短羊绒抱枕节牧牧}{Apricot}
-\newchatperson{nll}{avatar/nl.jpg}{纳尔}{OrangeRed}
-\newchatperson{ehl}{avatar/eh.jpg}{Husky Wang}{CadetBlue}
-
-% 捧哏的人(出现在右侧)
-\newchathost{cxr}{avatar/cx.jpg}{晴天赤弦}{Orange}
-\newchathost{wmr}{avatar/wm.jpg}{{\emojifont🐾}神前 \ 海/彦烈{\emojifont🐾}}{ProcessBlue}
-\newchathost{bdr}{avatar/bd.jpg}{白貂Akirua}{Goldenrod}
-\newchathost{nlr}{avatar/nl.jpg}{纳尔}{OrangeRed}
-\newchathost{gfr}{avatar/gf.jpg}{光锋-ZH9c418}{Cerulean}
-\newchathost{lrr}{avatar/lr.jpg}{雷尔想吃电弧星}{ProcessBlue}
-\newchathost{hqr}{avatar/hq.jpg}{草莓绿茶曲奇}{Green}
-\newchathost{amr}{avatar/am.jpg}{阿猫的猫}{NavyBlue}
-\newchathost{xzr}{avatar/xz.jpg}{【吃瓜】棕汪}{Dandelion}
-\newchathost{yyr}{avatar/yy.jpg}{热烈祝贺发表核心期刊零篇}{Peach}
-\newchathost{jmr}{avatar/jm.jpg}{短羊绒抱枕节牧牧}{Apricot}
-\newchathost{ltr}{avatar/lt.jpg}{鹿-$\theta$}{CornflowerBlue}
-\newchathost{bqr}{avatar/bq.jpg}{大镇做不出题家{\emojifont🦌}}{LimeGreen}
-\newchathost{dnr}{avatar/dn.jpg}{Dan}{Gray}
-\newchathost{xfr}{avatar/xf.jpg}{雪风：欢迎来到现实的荒漠}{Red}
-\newchathost{nwr}{avatar/nw.jpg}{星光立交与星河路互通匝道}{RoyalBlue}
-\newchathost{ehr}{avatar/eh.jpg}{Husky Wang}{CadetBlue}
-
-
-\begin{document}
-
-% 封面
-
-\pagenumbering{gobble} % 禁用页码
-
-\begin{titlepage}
-    \centering
-    \vspace*{2cm}
-    \begin{tikzpicture}[baseline=(current bounding box.north)]
-        \clip (0,0) circle(2cm); % Clip the avatar image to a circle
-        \node[anchor=center,inner sep=0pt,minimum size=1cm] (avatar) at (0,0)
-        {\includegraphics[width=4cm,height=4cm,keepaspectratio]{avatar/group.jpg}};
-    \end{tikzpicture}\\[1cm]
-    {\Huge\bfseries ``弦狼实验室''}\\[0.5cm]
-    {\Huge\bfseries 年度冷笑话合订本}
-
-    \vfill
-    \textperiodcentered2024\textperiodcentered \\
-    截至\today
-\end{titlepage}
-
-\pagenumbering{roman} % 页码重置为阿拉伯数字
-\setcounter{page}{1}   % 从第1页开始编号
-
-% May skip TOC to adjust for 4N page count
-
-\section{目录}
-\tableofcontents % 添加目录
-
-\newpage
-
-% 前言
-
-\section{主要贡献者}
-{\vspace{-2ex} \centering \small(2024年起, 按首次收录时间排序) \par}
-
-\hspace{1em}
-\begin{tikzpicture}[baseline=(current bounding box.north)]
-    \avatarWithText{0}{0}{avatar/jg.jpg}{花椒果汁}
-    \avatarWithText{0}{-0.8cm}{avatar/sm.jpg}{Simone}
-    \avatarWithText{0}{-1.6cm}{avatar/dn.jpg}{Dan}
-    \avatarWithText{0}{-2.4cm}{avatar/nw.jpg}{星光立交与星河路互通匝道}
-    \avatarWithText{0}{-3.2cm}{avatar/li.jpg}{雷狼狼}
-    \avatarWithText{0}{-4.0cm}{avatar/sh.jpg}{舒扒皮}
-    \avatarWithText{0}{-4.8cm}{avatar/am.jpg}{阿猫的猫}
-    \avatarWithText{0}{-5.6cm}{avatar/bd.jpg}{白貂Akirua}
-    \avatarWithText{0}{-6.4cm}{avatar/xf.jpg}{雪风：欢迎来到现实的荒漠}
-    \avatarWithText{0}{-7.2cm}{avatar/ax.jpg}{阿寻}
-    \avatarWithText{0}{-8.0cm}{avatar/xj.jpg}{小郊狼}
-    \avatarWithText{0}{-8.8cm}{avatar/co.jpg}{CoA}
-    \avatarWithText{0}{-9.6cm}{avatar/wx.jpg}{万相}
-    \avatarWithText{0}{-10.4cm}{avatar/lr.jpg}{雷尔想吃电弧星}
-    \avatarWithText{0}{-11.2cm}{avatar/yy.jpg}{热烈祝贺发表核心期刊零篇}
-    \avatarWithText{0}{-12.0cm}{avatar/jm.jpg}{短羊绒抱枕节牧牧}
-    \avatarWithText{0}{-12.8cm}{avatar/nl.jpg}{纳尔}
-    \avatarWithText{0}{-13.6cm}{avatar/eh.jpg}{Husky Wang}
-\end{tikzpicture}
-    
-\newpage
-
-% content
-
-\pagenumbering{arabic} % 页码重置为阿拉伯数字
-\setcounter{page}{1}   % 从第1页开始编号
 
 \section{2024}
 
@@ -269,8 +127,6 @@
 \subsection{8月19日}
 \jgl{过敏性肤质会麸质过敏吗？}
 
-% \newpage
-
 \subsection{8月19日}
 \lil{“我今年实岁26，虚岁28”王警官说着在蛋糕上点了（26+28i）根蜡烛}
 \hqr{@雷狼狼 其实这个还是比较容易}
@@ -282,8 +138,6 @@
 \context{赤弦发了一张猞猁标本的照片}
 \jgl{@晴天赤弦 \ 很多仙侠小说人名喜欢叫啥啥子}
 \jgl{那猞猁成精了就是猞猁子}
-
-% \newpage
 
 \subsection{8月20日}
 \context{在讨论各地小学的师资}
@@ -315,8 +169,6 @@
 \subsection{9月6日}
 \jgl{和尚偷懒睡回笼觉，是不是一种叫回龙观的修行？}
 
-% \newpage
-
 \subsection{9月6日}
 \context{在讨论搬到山里后就会变得喜欢发风景照}
 \xfl{可是}
@@ -347,8 +199,6 @@
 
 \subsection{9月27日}
 \jgl{经常把天聊死的人，是不是会觉得上帝已死？}
-
-% \newpage
 
 \subsection{9月27日}
 \jgl{-鱼生会不会有寄生虫啊？\\-子非鱼，为什么要怀疑鱼生？}
@@ -442,8 +292,6 @@
 
 \subsection{12月15日}
 \sml{狗狗通过撒尿标记地址，是不是也是一种I Pee Address？}
-
-% \newpage
 
 \subsection{12月15日}
 \context{赤弦被火警吵醒后想继续睡接上之前的梦}
@@ -546,8 +394,6 @@
 \jgl{脱毛和卸装是不是一个意思？}
 \jml{我是民科，这就是冷硝化}
 
-% \newpage
-
 \subsection{12月21日}
 \context{赤弦发了一张梗图}
 \cxr{所有的人事物都会骗你, \\但披萨不会, \\因为, \\披萨只有6片8片12片, \\没有7片.}
@@ -570,25 +416,3 @@
 \ehl{洗过脚的水叫洗脚水，那洗过电路板的水是不是叫洗板水}
 \ehl{但是洗过米的水为什么叫淘米水}
 \lrl{@Husky Wang \ 因为赛尔号找到了无尽能源，拯救了地球}
-
-
-
-% 封底
-
-\newpage
-\pagenumbering{gobble} % Disable page numbering
-
-% % 空页 用于页数凑整
-% \null
-% \newpage
-
-\null
-\vfill
-
-\begin{quote}
-    \centering
-    感谢各位群友贡献的聊天记录. \\
-    访问 \input{ |git remote get-url origin} 获取本文的 \LaTeX 代码. 
-\end{quote}
-
-\end{document}
