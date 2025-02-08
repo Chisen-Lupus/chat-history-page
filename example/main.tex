@@ -34,6 +34,12 @@
 \setlength{\cftbeforetoctitleskip}{0pt} % 移除标题前的空白
 \setlength{\cftaftertoctitleskip}{0pt}  % 移除标题后的空白
 \setcounter{tocdepth}{1} % 显示到 \section 层级
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black, %choose some color if you want links to stand out
+}
 
 \usepackage{../chat-history}
 
