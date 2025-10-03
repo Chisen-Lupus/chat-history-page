@@ -11,8 +11,12 @@
 % \setCJKsansfont{Noto Sans SC}
 % \setCJKmonofont{Noto Sans Mono SC}
 \usepackage{fontspec} % Enables font customization
-\newfontfamily\emojifont{Noto Color Emoji}[Renderer=HarfBuzz]
-\newfontfamily\emojifontbak{Twemoji Mozilla}[Renderer=HarfBuzz] % TODO: unify?
+\newfontfamily\emojifont{Noto Color Emoji}[
+  Renderer=HarfBuzz,
+  % RawFeature={+colr;+emoji;palette=0}, % 开启 COLR/emoji 特性，并指定默认调色板
+]
+% backup free emoji font
+% \newfontfamily\emojifont{Twemoji Mozilla}[Renderer=HarfBuzz]
 \newfontfamily\Cans{Noto Sans Canadian Aboriginal}[Scale=MatchLowercase]
 % \setmainfont{Smiley Sans}
 \setmainfont{Noto Sans SC}[Weight=400]
@@ -84,8 +88,8 @@
 \newchatperson{yrl}{avatar/yr.jpg}{薏仁}{SeaGreen}
 \newchatperson{nhl}{avatar/nh.jpg}{诺禾}{SkyBlue}
 \newchatperson{ltl}{avatar/lt.jpg}{鹿-$\theta$}{CornflowerBlue}
-% \newchatperson{cxl}{avatar/cx.jpg}{晴天赤弦}{Orange}
 \newchatperson{jal}{avatar/ja.jpg}{杰}{BurntOrange}
+\newchatperson{cxl}{avatar/cx.jpg}{晴天赤弦}{Orange} % TODO: change first occurance
 
 % 捧哏的人(出现在右侧)
 % 2024
@@ -194,6 +198,20 @@
   \avatarwithtext{0}{0}{avatar/ls.jpg}{莱森}
   \avatarwithtext{0}{-0.8cm}{avatar/as.jpg}{奥斯虎}
   \avatarwithtext{0}{-1.6cm}{avatar/jj.jpg}{金桔}
+  \avatarwithtext{0}{-2.4cm}{avatar/xz.jpg}{棕汪}
+  \avatarwithtext{0}{-3.2cm}{avatar/lm.jpg}{Night Aurora}
+  \avatarwithtext{0}{-4.0cm}{avatar/cy.jpg}{吃鱼的猫}
+  \avatarwithtext{0}{-4.8cm}{avatar/np.jpg}{Np}
+  \avatarwithtext{0}{-5.6cm}{avatar/xm.jpg}{龙羽}
+  \avatarwithtext{0}{-6.4cm}{avatar/mk.jpg}{Mark}
+  \avatarwithtext{0}{-7.2cm}{avatar/qs.jpg}{棋山}
+  \avatarwithtext{0}{-8.0cm}{avatar/hg.jpg}{汉广}
+  \avatarwithtext{0}{-8.8cm}{avatar/ly.jpg}{落雨}
+  \avatarwithtext{0}{-9.6cm}{avatar/yr.jpg}{薏仁}
+  \avatarwithtext{0}{-10.4cm}{avatar/nh.jpg}{诺禾}
+  \avatarwithtext{0}{-11.2cm}{avatar/lt.jpg}{鹿-$\theta$}
+  \avatarwithtext{0}{-12.0cm}{avatar/ja.jpg}{杰}
+  \avatarwithtext{0}{-12.8cm}{avatar/cx.jpg}{晴天赤弦} % TODO: change first occurance
 \end{tikzpicture}
     
 \newpage
