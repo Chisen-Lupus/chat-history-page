@@ -1,4 +1,5 @@
 % main.tex
+
 \documentclass[a4paper, 9pt, twoside]{article}
 \usepackage[inner=0.2in, outer=0.2in, top=0.2in, bottom=0.6in]{geometry}
 \geometry{papersize={99mm, 210mm}}        % 定义 DL 尺寸
@@ -149,8 +150,13 @@
 \pagenumbering{arabic} % 页码重置为阿拉伯数字
 \setcounter{page}{1}   % 从第1页开始编号
 
-% \include{2024}
-\include{2025}
+\section{2024}
+% \input{2024}f
+\input{2024_12}
+
+\newpage
+\section{2025}
+\input{2025}
 
 % ===============封底===============
 
