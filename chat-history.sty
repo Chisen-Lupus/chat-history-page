@@ -9,7 +9,9 @@
 \RequirePackage{needspace}
 \usetikzlibrary{fit}
 \usetikzlibrary{calc}
+
 \newlength{\textlen}
+\newlength{\avatarvskip}
 
 % Define avatar and chat commands
 % |    avatar     | bubble           |
@@ -110,6 +112,36 @@
     \end{scope}
     \node[anchor=west,text=gray] at ($(#1 + 0.4cm, #2)$) {#4};
 }
+% Replaced with inline code. Example use of non-inline code:
+% \begin{tikzpicture}[baseline=(current bounding box.north)]
+%   \avatarwithtext{0}{0}{avatar/jg.jpg}{花椒果汁}
+%   \avatarwithtext{0}{-0.8cm}{avatar/sm.jpg}{Simone}
+%   \avatarwithtext{0}{-1.6cm}{avatar/dn.jpg}{Dan}
+%   \avatarwithtext{0}{-2.4cm}{avatar/nw.jpg}{星光立交与星河路互通匝道}
+% \end{tikzpicture}
+
+\setlength{\avatarvskip}{0.5ex} % 0.8cm - height of tikz
+
+\newcommand{\avatarwithtextinline}[2]{%
+  \noindent
+  \begin{tikzpicture}[baseline={(avatar.base)}]
+    % 定义头像中心节点
+    \node[inner sep=0pt] (avatar) at (0,0) {};
+
+    % 圆形裁剪头像图片（0.3cm 半径, 图片 0.6cm）
+    \begin{scope}
+      \clip (avatar) circle (0.3cm);
+      \node[anchor=center,inner sep=0pt,minimum size=1cm] at (avatar)
+        {\includegraphics[width=0.6cm,height=0.6cm,keepaspectratio]{#1}};
+    \end{scope}
+
+    % 名字：灰色文本，向右偏移 0.4cm
+    \node[anchor=west,text=gray] at ($(avatar.east)+(0.4cm,0)$) {#2};
+  \end{tikzpicture}%
+  \par
+  \vspace{\avatarvskip}
+}
+
 
 % No paragraph indentation
 \setlength{\parindent}{0pt}
