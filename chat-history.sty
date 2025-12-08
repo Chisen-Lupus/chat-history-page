@@ -86,14 +86,27 @@
     }
 }
 
-% Define context command
+% Define context command with width check
 \newcommand{\context}[1]{%
-    \vspace{1ex}
+    % ----- Step 1: 用 hbox 测量 “横线+空格+内容+空格+横线” 的总宽度 -----
+    \begingroup
+      \setbox0=\hbox{%
+        \small
+        \rule[0.5ex]{1.5em}{0.4pt}\hspace{0.8em}#1\hspace{0.8em}\rule[0.5ex]{1.5em}{0.4pt}%
+      }%
+      \dimen0=\wd0
+      \ifdim\dimen0>\linewidth
+        \PackageWarning{context}{Context line is too long and would not fit in one line: #1}%
+      \fi
+    \endgroup
+    % ----- Step 2: 实际排版（保持你原来的样子） -----
+    \vspace{1ex}%
     \begin{center}%
-        \textcolor{gray}{\small \rule[0.5ex]{1.5em}{0.4pt}\hspace{0.8em}#1\hspace{0.8em}\rule[0.5ex]{1.5em}{0.4pt}}%
+      \textcolor{gray}{\small
+        \rule[0.5ex]{1.5em}{0.4pt}\hspace{0.8em}#1\hspace{0.8em}\rule[0.5ex]{1.5em}{0.4pt}}%
     \end{center}%
     \par
-    \vspace{-3ex}
+    \vspace{-3ex}%
 }
 
 % % Define subsection style, now defined in titlespec
